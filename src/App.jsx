@@ -1,16 +1,16 @@
-import Header from "./components/Header"
-import Main from "./components/Main"
-
+import Header from "./components/Header";
+import Main from "./components/Main";
+import { GlobalProvider } from "./context/GlobalContext";
 
 function App() {
-  
-
   return (
     <>
-      <Header />
-      <Main />
+      <GlobalProvider>
+        <Header />
+        <Main />
+      </GlobalProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

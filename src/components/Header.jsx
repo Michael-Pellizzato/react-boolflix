@@ -1,7 +1,14 @@
-const Header = ( ) => {
-    return(
-        <h2>questo è il mio header</h2>
-    )
-}
+import { useGlobalContext } from "../context/GlobalContext";
 
-export default Header
+const Header = () => {
+  const { handleSearch, handleSummit } = useGlobalContext();
+
+  return (
+    <form onSubmit={handleSummit} action="">
+      <input onChange={handleSearch} type="search" />
+      <button className="btn btn-primary">cerca</button>
+    </form>
+  );
+};
+
+export default Header;
